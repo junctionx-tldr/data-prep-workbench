@@ -1,5 +1,5 @@
 {
-  "name": "tldr-map-data",
+  "name": "data-prep-workbench",
   "version": "0.0.0",
   "description": "",
   "scripts": {
@@ -8,7 +8,8 @@
     "lint": "tslint --format stylish --project .",
     "prettier": "prettier --config node_modules/tslint-lt/.prettierrc.yml --write \"**/*.{ts,tsx,css,scss,html,js,jsx,yml,json,md}\" \"!{dist}/**\"",
     "test": "npm run buildOnce && npm run lint && npm run prettier",
-    "prepare": "npm run buildOnce"
+    "prepare": "npm run buildOnce",
+    "start": "node --max_old_space_size=8192 dist/index.js"
   },
   "files": [
     "dist"
@@ -17,15 +18,27 @@
   "types": "dist/index",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ltetzlaff/tldr-map-data.git"
+    "url": "https://github.com/ltetzlaff/data-prep-workbench.git"
   },
   "author": "ltetzlaff",
   "license": "All rights reserved.",
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "JSONStream": "^1.3.5",
+    "dotenv": "^8.2.0",
+    "got": "^9.6.0",
+    "lru-native2": "^1.2.1",
+    "milliseconds": "^1.0.3",
+    "p-map": "^3.0.0",
+    "p-queue": "^6.2.0",
+    "p-throttle": "^3.1.0",
+    "pretty-bytes": "^5.3.0",
+    "yargs": "^14.2.0"
   },
   "devDependencies": {
     "@types/dotenv": "^6.1.1",
+    "@types/got": "^9.6.7",
+    "@types/milliseconds": "0.0.29",
+    "@types/yargs": "^13.0.3",
     "tslint-lt": "^1.10.7",
     "typescript": "^3.6.4"
   }

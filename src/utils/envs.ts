@@ -2,17 +2,23 @@ import { config } from "dotenv"
 config()
 
 const {
-  WHATEVER = ""
+  API_URL = "",
+  API_KEY = "",
+  WORKING_DIRECTORY = ""
 } = process.env
 
 if (
   [
-    WHATEVER
+    API_URL,
+    API_KEY,
+    WORKING_DIRECTORY
   ].some(a => a === "")
 ) {
   throw new Error(`Envs not set properly: ${JSON.stringify(process.env)}`)
 }
 
 export {
-  WHATEVER
+  API_URL,
+  API_KEY,
+  WORKING_DIRECTORY
 }
